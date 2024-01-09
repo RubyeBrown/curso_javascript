@@ -32,7 +32,7 @@ suite('specs', () => {
         assert.deepEqual(schema, {
           namespace: 'org.apache.avro.test',
           protocol: 'Simple',
-          doc: 'An example protocol in Avro IDL.\n\nInspired by the Avro specification IDL page:\nhttps://avro.apache.org/docs/current/idl.html#example',
+          doc: 'An example protocol in Avro IDL.\n\nInspired by the Avro specification IDL page:\nhttps://avro.apache.org/docs/current/idl.html!example',
           types: [
             {
               aliases: ['org.foo.KindOf'],
@@ -498,7 +498,7 @@ suite('specs', () => {
 
     test('annotated union', (done) => {
       let hook = createImportHook({
-        '1': 'protocol A { /** 1 */ @bar(true) union { null, int } foo(); }'
+        '1': 'protocol A { / * 1 */ @bar(true) union { null, int } foo(); }'
       });
       assembleProtocol('1', {importHook: hook}, (err) => {
         assert(/union annotations/.test(err.message));
@@ -893,3 +893,4 @@ suite('specs', () => {
   });
 
 });
+ 
