@@ -1,4 +1,4 @@
-// inserir o elemento no body
+//!inserir o elemento no body
 var novoParagrafo = document.createElement("p");
 
 var texto = document.createTextNode("Este é o conteúdo do paragráfo");
@@ -25,4 +25,4 @@ el.appendChild(document.createTextNode("texto do span"));
 
 console.log(el);
 
-container.appendChild(el);
+container.appendChild(el); 
